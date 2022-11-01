@@ -22,6 +22,8 @@ class BestBooks extends React.Component {
     this.setState({
       books: response.data
     })
+
+    console.log(this.state.books);
   }
   
   addBook = (book) => {
@@ -58,11 +60,11 @@ class BestBooks extends React.Component {
 
     return (
       <>
-        <h2>My Essential Lifelong Learning &amp; Formation Shelf</h2>
+        <h2>Good Reads &amp; Most Wanted Shelf</h2>
         <Button onClick={(e) => this.setState({showModal:true})}>
           Add Book
         </Button>
-        <BookFormModal show={this.state.showModal} close={(e) => this.setState({showModal:false})} submit={this.addBook}></BookFormModal>
+        <BookFormModal how={this.state.showModal} close={(e) => this.setState({showModal:false})} submit={this.addBook}></BookFormModal>
         {this.state.books.length ? (
           <Carousel>
             {this.state.books.map(element => 
@@ -70,6 +72,7 @@ class BestBooks extends React.Component {
               <img src='https://place-hold.it/2000x400/black/white' alt='sample background'></img>
               <Carousel.Caption>
                 <h2>{element.title}</h2>
+                <img src={element.imgURL} alt={element.title} width="50" height="75"/>
                 <p>{element.description}</p>
                 <p>{element.status}</p>
                 <p>{element._id}</p>
