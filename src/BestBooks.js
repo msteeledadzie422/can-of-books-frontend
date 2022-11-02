@@ -90,7 +90,7 @@ componentDidMount() {
         <Button onClick={(e) => this.setState({showModal:true})}>
           Add Book
         </Button>
-        <BookFormModal how={this.state.showModal} close={(e) => this.setState({showModal:false})} submit={this.addBook}></BookFormModal>
+        <BookFormModal show={this.state.showModal} close={(e) => this.setState({showModal:false})} submit={this.addBook}></BookFormModal>
         {this.state.books.length ? (
           <Carousel activeIndex={this.state.carouselIndex} onSelect={this.handleCarouselSelect} style={{backgroundColor: 'black'}}>
             {this.state.books.map(element => 
