@@ -9,7 +9,8 @@ class BookFormModal extends Component {
         this.state = {
             Title: '',
             Description: '',
-            Status: ''
+            Status: '',
+            ImgURL: ''
         }
     }
 
@@ -18,7 +19,8 @@ class BookFormModal extends Component {
         const book = {
             title: this.state.Title,
             description: this.state.Description,
-            status: this.state.Status
+            status: this.state.Status,
+            imgURL: this.state.ImgURL
         };
         this.props.submit(book);
     }
@@ -38,6 +40,8 @@ class BookFormModal extends Component {
                     <Form.Control type='input' id='Description' onChange={(e) => this.setState({Description: e.target.value})}></Form.Control>
                     <Form.Label>Status:</Form.Label>
                     <Form.Control type='input' id='Status' onChange={(e) => this.setState({Status: e.target.value})}></Form.Control>
+                    <Form.Label>ImageURL:(optional)</Form.Label>
+                    <Form.Control type='input' id='ImgURL' onChange={(e) => this.setState({ImgURL: e.target.value})}></Form.Control>
                     <Button type='submit'>
                         Submit
                     </Button>
