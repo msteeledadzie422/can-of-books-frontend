@@ -8,6 +8,7 @@ import {
   Routes,
   Route
 } from "react-router-dom";
+import About from './About';
 
 class App extends React.Component {
   render() {
