@@ -86,11 +86,11 @@ componentDidMount() {
 
     return (
       <>
-        <h2>My Essential Lifelong Learning &amp; Formation Shelf</h2>
+        <h2>Good Reads &amp; Most Wanted Shelf</h2>
         <Button onClick={(e) => this.setState({showModal:true})}>
           Add Book
         </Button>
-        <BookFormModal show={this.state.showModal} close={(e) => this.setState({showModal:false})} submit={this.addBook}></BookFormModal>
+        <BookFormModal how={this.state.showModal} close={(e) => this.setState({showModal:false})} submit={this.addBook}></BookFormModal>
         {this.state.books.length ? (
           <Carousel activeIndex={this.state.carouselIndex} onSelect={this.handleCarouselSelect} style={{backgroundColor: 'black'}}>
             {this.state.books.map(element => 
@@ -118,4 +118,3 @@ componentDidMount() {
 }
 
 export default BestBooks;
-
